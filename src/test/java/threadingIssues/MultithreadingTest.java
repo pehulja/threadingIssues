@@ -4,13 +4,14 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import com.pehulja.threading.Multithreading;
 import com.pehulja.threading.Result;
+import com.pehulja.threading.counters.AtomicCounter;
 import com.pehulja.threading.counters.plain.PlainCounter;
 import com.pehulja.threading.counters.plain.SynchronizedFieldPlainCounter;
+import com.pehulja.threading.counters.plain.SynchronizedMethodPlainCounter;
 
 public class MultithreadingTest {
 	private Multithreading job;
@@ -41,6 +42,16 @@ public class MultithreadingTest {
 	@Test
 	public void testSyncFieldPlainCounter() throws Exception {
 		result = this.job.execute(THREAD_NUMBER, ITERATIONS_NUMBER, SynchronizedFieldPlainCounter::new);
+	}
+	
+	@Test
+	public void testSyncMethodPlainCounter() throws Exception {
+		result = this.job.execute(THREAD_NUMBER, ITERATIONS_NUMBER, SynchronizedMethodPlainCounter::new);
+	}
+	
+	@Test
+	public void testAtomicsCounter() throws Exception {
+		result = this.job.execute(THREAD_NUMBER, ITERATIONS_NUMBER, AtomicCounter::new);
 	}
 
 }
