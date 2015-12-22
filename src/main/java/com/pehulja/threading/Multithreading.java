@@ -6,7 +6,7 @@ import com.pehulja.threading.counters.Counter;
 
 public class Multithreading {
 	
-	public Result execute(final int THREADS_NUMBER, final int ITERATIONS, Supplier<Counter> counterImpl) throws Exception {
+	public Result execute(final int THREADS_NUMBER, final int ITERATIONS, Supplier<? extends Counter> counterImpl) throws Exception {
 		final Counter counter = counterImpl.get();
 		
 		ThreadKeeper threadKeeper = new ThreadKeeper(THREADS_NUMBER, () -> {
