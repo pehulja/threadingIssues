@@ -1,17 +1,17 @@
 package com.pehulja.threading.counters;
 
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class AtomicCounter implements Counter {
-	private AtomicInteger counter = new AtomicInteger();
+	private AtomicLong counter = new AtomicLong();
 
 	@Override
-	public int incrementAndGet() {
+	public long incrementAndGet() {
 		return this.counter.incrementAndGet();
 	}
 
 	@Override
-	public int getValue() {
+	public long getValue() {
 		return this.counter.get();
 	}
 }

@@ -3,22 +3,22 @@ package com.pehulja.threading;
 import com.pehulja.threading.counters.Counter;
 
 public class Result {
-	private final int expected;
-	private final int actual;
+	private final long expected;
+	private final long actual;
 	private String counterClass;
 	
-	public Result(int expected, int actual, Class<? extends Counter> clazz) {
+	public Result(long expected, long actual, Class<? extends Counter> clazz) {
 		super();
 		this.expected = expected;
 		this.actual = actual;
 		this.counterClass = clazz.getSimpleName();
 	}
 
-	public int getExpected() {
+	public long getExpected() {
 		return expected;
 	}
 
-	public int getActual() {
+	public long getActual() {
 		return actual;
 	}
 
