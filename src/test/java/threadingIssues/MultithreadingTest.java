@@ -48,14 +48,11 @@ public class MultithreadingTest {
 		this.startPoint = System.currentTimeMillis();
 	}
 	
-	@After
-	public void after(){
-		System.out.println(result.toString() + "; time: " + (System.currentTimeMillis() - this.startPoint) + "ms");
-		assertEquals(result.getExpected(), result.getActual());
-	}
-	
 	@Test
 	public void test() throws Exception {
 		result = this.job.execute(THREAD_NUMBER, ITERATIONS_NUMBER, this.counterImplementation);
+		System.out.println(result.toString() + "; time: " + (System.currentTimeMillis() - this.startPoint) + "ms");
+
+		assertEquals(result.getExpected(), result.getActual());
 	}
 }
