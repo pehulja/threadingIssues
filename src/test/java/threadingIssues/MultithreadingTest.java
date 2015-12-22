@@ -30,7 +30,7 @@ public class MultithreadingTest {
 	
 	@After
 	public void after(){
-		System.out.println("No sync: " + result.toString() + "; time: " + (System.currentTimeMillis() - this.startPoint) + "ms");
+		System.out.println(result.toString() + "; time: " + (System.currentTimeMillis() - this.startPoint) + "ms");
 		assertEquals(result.getExpected(), result.getActual());
 	}
 
