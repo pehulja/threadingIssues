@@ -29,6 +29,6 @@ public class Multithreading {
 			}
 		});
 		
-		return new Result(THREADS_NUMBER * ITERATIONS, counter.getValue());
+		return new Result(THREADS_NUMBER * ITERATIONS, counter.getValue(), counter.getClass());
 	}
 }

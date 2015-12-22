@@ -1,7 +1,6 @@
-package com.pehulja.threading.counters;
+package com.pehulja.threading.counters.plain;
 
 public class SynchronizedFieldPlainCounter extends AbstractPlainCounter{
-	private int counter = 0;
 	@Override
 	public int incrementAndGet() {
 		int value = 0;

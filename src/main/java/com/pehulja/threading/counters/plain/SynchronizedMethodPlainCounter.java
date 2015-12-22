@@ -1,8 +1,6 @@
-package com.pehulja.threading.counters;
+package com.pehulja.threading.counters.plain;
 
 public class SynchronizedMethodPlainCounter extends AbstractPlainCounter{
-	private int counter = 0;
-
 	@Override
 	public synchronized int incrementAndGet() {
 		return ++counter;

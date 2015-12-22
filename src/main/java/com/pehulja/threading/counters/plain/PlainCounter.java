@@ -1,4 +1,4 @@
-package com.pehulja.threading.counters;
+package com.pehulja.threading.counters.plain;
 
 public class PlainCounter extends AbstractPlainCounter{
 
